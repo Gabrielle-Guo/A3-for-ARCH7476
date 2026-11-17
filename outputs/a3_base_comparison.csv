@@ -1,7 +1,0 @@
-variant,position,orientation,flow_proxy,w_m,corridor_overlap_m2,comfort_band_share_pct,seat_area_m2,inside_window,geom_status,band_threshold_pass,data_status
-S1,Near,parallel,east_garden_boundary,1.0,0.0,80.0,2.0,True,Clear under assumed geometry,True,"OSM-ANCHORED LOCATION; WINDOW, FLOW, THRESHOLD ASSUMED"
-S2,Near,perpendicular,east_garden_boundary,1.0,0.0,60.0,2.0,True,Clear under assumed geometry,True,"OSM-ANCHORED LOCATION; WINDOW, FLOW, THRESHOLD ASSUMED"
-S3,Centre,parallel,east_garden_boundary,1.0,0.0,0.0,2.0,True,Clear under assumed geometry,False,"OSM-ANCHORED LOCATION; WINDOW, FLOW, THRESHOLD ASSUMED"
-S4,Centre,perpendicular,east_garden_boundary,1.0,0.0,15.0,2.0,True,Clear under assumed geometry,False,"OSM-ANCHORED LOCATION; WINDOW, FLOW, THRESHOLD ASSUMED"
-S5,Far,parallel,east_garden_boundary,1.0,0.0,0.0,2.0,True,Clear under assumed geometry,False,"OSM-ANCHORED LOCATION; WINDOW, FLOW, THRESHOLD ASSUMED"
-S6,Far,perpendicular,east_garden_boundary,1.0,0.0,0.0,2.0,True,Clear under assumed geometry,False,"OSM-ANCHORED LOCATION; WINDOW, FLOW, THRESHOLD ASSUMED"

@@ -1,0 +1,16 @@
+{
+  "frame": "local-metre schematic: x = distance inward from the east edge proxy, y = distance south from the north edge proxy",
+  "provenance_only": "Harbour Road Garden, OpenStreetMap way 27059126 (ID cited for location; no coordinates are loaded)",
+  "window_m": 6.0,
+  "seat_long_m": 2.0,
+  "seat_short_m": 1.0,
+  "seat_centre_from_north_m": 3.0,
+  "widths_m": [0.75, 1.0, 1.5],
+  "base_width_m": 1.0,
+  "c1_m": 0.30,
+  "c2_m": 1.50,
+  "s_pct": 60.0,
+  "edge_proxies": ["east", "north"],
+  "sweep_step_m": 0.05,
+  "status": "Window C, edge proxies, w, c1, c2 and s are researcher assumptions; none is a measured path or a comfort standard"
+}

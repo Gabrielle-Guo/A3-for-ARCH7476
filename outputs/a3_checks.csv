@@ -1,0 +1,27 @@
+n,check,expected,observed,status
+1,Scenario count,6 x 3 x 2 = 36,36,PASS
+2,S1 seat area,2.00 m2,2.00 m2,PASS
+3,S2 seat area,2.00 m2,2.00 m2,PASS
+4,S3 seat area,2.00 m2,2.00 m2,PASS
+5,S4 seat area,2.00 m2,2.00 m2,PASS
+6,S5 seat area,2.00 m2,2.00 m2,PASS
+7,S6 seat area,2.00 m2,2.00 m2,PASS
+8,S1 inside Window C,True,True,PASS
+9,S2 inside Window C,True,True,PASS
+10,S3 inside Window C,True,True,PASS
+11,S4 inside Window C,True,True,PASS
+12,S5 inside Window C,True,True,PASS
+13,S6 inside Window C,True,True,PASS
+14,Known case S1 / east / w=1.00: band_share_pct,80.0 (seat x 1.7-2.7 in band 1.3-2.5: 0.8 of 1.0),80.0,PASS
+15,Known case S2 / east / w=1.00: band_share_pct,60.0 (seat x 1.2-3.2 in band 1.3-2.5: 1.2 of 2.0),60.0,PASS
+16,Known case S1 / east / w=0.75: band_share_pct,55.0 (band 1.05-2.25: 0.55 of 1.0),55.0,PASS
+17,Known case S1 / east / w=1.50: band_share_pct,90.0 (band 1.8-3.0: 0.9 of 1.0),90.0,PASS
+18,Known case S2 / east / w=1.50: corridor_overlap_m2,0.3 (seat x 1.2-1.5 inside corridor: 0.3 m x 1.0 m),0.3,PASS
+19,Known case S1 / north / w=1.00: band_share_pct,25.0 (seat y 2.0-4.0 in band 1.3-2.5: 0.5 of 2.0),25.0,PASS
+20,Known case S4 / east / w=1.00: band_share_pct,15.0 (seat x 2.2-4.2 in band 1.3-2.5: 0.3 of 2.0),15.0,PASS
+21,All band shares within 0-100 %,True,0.0 to 90.0,PASS
+22,All overlaps within 0-2.00 m2,True,0.0 to 0.3,PASS
+23,No east-proxy overlap at w = 0.75 m,True,True,PASS
+24,"Position sweep (parallel, east): passing centres",2.00 to 2.15 m,2.00 to 2.15 m,PASS
+25,S1 east-proxy pass range of w,0.80 to 1.70 m,0.80 to 1.70 m,PASS
+GP,GeoPandas overlay cross-check (east proxy),S2 / w=1.50 m = 0.30 m2; no difference from core,geopandas not installed in this environment,SKIPPED

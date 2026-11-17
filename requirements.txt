@@ -1,8 +1,6 @@
-# Versions of the reference run (outputs/versions.txt). Newer versions should also work.
-geopandas==1.1.2
-shapely==2.1.2
-pyproj==3.7.2
-pandas==2.2.3
-matplotlib==3.10.8
-numpy
-pillow
+# Only matplotlib is required. geopandas/shapely enable the independent overlay cross-check
+# (pre-installed in Google Colab). Version pins are deliberately left open.
+matplotlib
+geopandas
+shapely
+pandas
