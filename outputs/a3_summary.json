@@ -1,0 +1,19 @@
+{
+  "status": "OSM-ANCHORED GEOMETRY / ALL FLOW AND BEHAVIOR ASSUMPTIONS UNVALIDATED",
+  "osm_garden_way": "https://www.openstreetmap.org/way/27059126",
+  "osm_ne_node": "296894103",
+  "osm_se_node": "296894102",
+  "osm_east_boundary_length_m": 46.06,
+  "window_C": "researcher-defined 6x6m patch along east garden edge 5m south of OSM NE node",
+  "base_east_proxy_w1_band_share_pct": {
+    "S1": 80.0,
+    "S2": 60.0,
+    "S3": 0.0,
+    "S4": 15.0,
+    "S5": 0.0,
+    "S6": 0.0
+  },
+  "base_best_conditional": "S1",
+  "source_caveat": "OSM east garden boundary is not tagged as footway. North flow edge is an assumed window-side segment.",
+  "assumption_note": "c1=.3m, c2=1.5m, s=60% researcher-defined; no measured pedestrian routes or stop counts."
+}

@@ -1,0 +1,42 @@
+{
+  "access_date": "2026-11-13",
+  "garden_way": "https://www.openstreetmap.org/way/27059126",
+  "nodes": [
+    {
+      "osm_id": "8308187127",
+      "label": "W boundary",
+      "lat": 22.2803521,
+      "lon": 114.1750059,
+      "url": "https://www.openstreetmap.org/node/8308187127"
+    },
+    {
+      "osm_id": "296894101",
+      "label": "SW",
+      "lat": 22.2801692,
+      "lon": 114.1750221,
+      "url": "https://www.openstreetmap.org/node/296894101"
+    },
+    {
+      "osm_id": "12270766150",
+      "label": "S-mid",
+      "lat": 22.2802022,
+      "lon": 114.1754572,
+      "url": "https://www.openstreetmap.org/node/12270766150"
+    },
+    {
+      "osm_id": "296894102",
+      "label": "SE",
+      "lat": 22.2802402,
+      "lon": 114.1759591,
+      "url": "https://www.openstreetmap.org/node/296894102"
+    },
+    {
+      "osm_id": "296894103",
+      "label": "NE",
+      "lat": 22.2806549,
+      "lon": 114.1759247,
+      "url": "https://www.openstreetmap.org/node/296894103"
+    }
+  ],
+  "status": "Only 5 of 6 unique garden boundary nodes retrieved as verifiable HTML; northeast and east side complete."
+}

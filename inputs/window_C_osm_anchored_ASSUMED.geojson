@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "window_C_osm_anchored_ASSUMED",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::2326" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "C", "source": "RESEARCHER-DEFINED 6x6m, OSM-east-boundary-anchored" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 836170.516612802515738, 815748.58804232859984 ], [ 836164.534410665626638, 815748.126244111103006 ], [ 836164.996208883123472, 815742.144041974213906 ], [ 836170.978411020012572, 815742.60584019171074 ], [ 836170.516612802515738, 815748.58804232859984 ] ] ] } }
+]
+}

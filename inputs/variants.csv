@@ -1,0 +1,7 @@
+variant,position,distance_from_flow_edge_m,orientation,seat_L_m,seat_W_m,value_status
+S1,Near,2.2,parallel,2.0,1.0,RESEARCHER ASSUMPTION
+S2,Near,2.2,perpendicular,2.0,1.0,RESEARCHER ASSUMPTION
+S3,Centre,3.2,parallel,2.0,1.0,RESEARCHER ASSUMPTION
+S4,Centre,3.2,perpendicular,2.0,1.0,RESEARCHER ASSUMPTION
+S5,Far,4.3,parallel,2.0,1.0,RESEARCHER ASSUMPTION
+S6,Far,4.3,perpendicular,2.0,1.0,RESEARCHER ASSUMPTION

@@ -1,0 +1,9 @@
+check,expected,observed,status
+East OSM boundary length,40 to 55m,46.06 m,"PASS, based on cited OSM node coords"
+36 scenario output rows,36,36,PASS
+Seat area after rotation,2.00 m2,2.00 to 2.00 m2,PASS
+Known case S1 band share east/w=1,80.0% by hand,80.0%,PASS
+All seats in assumed Window C,True,True,PASS
+Footway/observed flow at NE garden edge,OSM footway/field verification,OSM garden boundary only,PENDING
+Window C true extent,surveyed C polygon,6x6m assumption,PENDING
+Comfort threshold validation,observational/literature evidence,c1/c2/s assumed,PENDING

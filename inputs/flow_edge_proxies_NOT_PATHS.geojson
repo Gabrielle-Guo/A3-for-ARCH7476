@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "flow_edge_proxies_NOT_PATHS",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::2326" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "east_garden_boundary", "source": "OSM WAY 27059126 - garden boundary, pedestrian flow UNVERIFIED" }, "geometry": { "type": "LineString", "coordinates": [ [ 836170.131780954543501, 815753.573210775968619 ], [ 836173.67670540290419, 815707.651737275184132 ] ] } },
+{ "type": "Feature", "properties": { "name": "north_assumed_window_edge", "source": "RESEARCHER-CONSTRUCTED - not a mapped path or observed flow" }, "geometry": { "type": "LineString", "coordinates": [ [ 836170.516612802515738, 815748.58804232859984 ], [ 836164.534410665626638, 815748.126244111103006 ] ] } }
+]
+}
