@@ -60,7 +60,7 @@ Both options run the same file (`run_all.py`) and the same 39 checks. No step is
 | `AI_PROMPT_LOG.md` | What AI was asked to do and how each output was checked |
 | `requirements.txt` | numpy, matplotlib |
 
-`Window_C_Peer_Run.ipynb` and `Window_C_Peer_Run (1).ipynb` are the author's separate peer-review notebooks; they are not part of this capsule's run or checks.
+The GitHub repository also holds `Window_C_Peer_Run.ipynb` and `Window_C_Peer_Run (1).ipynb`, the author's separate peer-review notebooks. They are not part of this capsule's run or checks and are left out of the ZIP.
 
 ## Environment of the recorded run
 

@@ -147,7 +147,7 @@ def window_plans_figure(out, cfg, variants):
         ("5 × 5 m, geometry kept · S1 centre 1.83 m", 5.0, S1["centre_from_east_m"] * 5.0 / 6.0, 1.5),
         ("Offset rule · centre 2.00–2.15 m", 5.0, None, None),
     ]
-    fig, axes = plt.subplots(1, 3, figsize=(13.2, 5.4))
+    fig, axes = plt.subplots(1, 3, figsize=(13.2, 4.7))
     for ax, (title, W, xc, w) in zip(axes, panels):
         ax.add_patch(Rectangle((-W, -W), W, W, fc="#f7f4ec", ec="#e0602e", ls="--", lw=1.6))
         ax.plot([0, 0], [0.3, -W - 0.3], color="#1d5a8a", lw=4)
@@ -180,7 +180,7 @@ def window_plans_figure(out, cfg, variants):
     fig.suptitle("Keeping the geometry moves the seat; the edge offset does not", fontsize=14.5, fontweight="bold", color=GREEN, x=0.02, ha="left")
     fig.text(0.02, 0.02, "Same scale, plan, north up. Tan = corridor at the width shown, green = band, orange = 2.0 × 1.0 m seat. Schematic, not surveyed.",
              fontsize=9, color=MUTED)
-    fig.tight_layout(rect=(0, 0.05, 1, 0.93))
+    fig.tight_layout(rect=(0, 0.04, 1, 0.95), w_pad=0.5)
     fig.savefig(out / "fig_window_plans.png", dpi=200); plt.close(fig)
 
 
