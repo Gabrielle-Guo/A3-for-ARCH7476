@@ -1,4 +1,4 @@
-Run: 2026-11-26 09:52 UTC
+Run: 2026-11-26 09:55 UTC
 Environment: python 3.13.18 | numpy 2.5.3 | matplotlib 3.11.2 | platform Linux x86_64
 A3 scenarios: 36 rows -> outputs/a3_scenarios.csv
 A4 window-size scenarios: 504 rows -> outputs/a4_window_size.csv
