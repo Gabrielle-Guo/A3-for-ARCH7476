@@ -1,6 +1,6 @@
 # Window C seat placement — reproducibility capsule (ARCH7476 A3 → A4)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Starive/A3-for-ARCH7476/blob/main/a3_seat_C.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Gabrielle-Guo/A3-for-ARCH7476/blob/main/a3_seat_C.ipynb)
 
 ARCH7476 Evidence-Based Generative Design · Guo Xinghe · Route B (live studio application).
 
@@ -21,7 +21,7 @@ ARCH7476 Evidence-Based Generative Design · Guo Xinghe · Route B (live studio 
 **Option B: your own computer (Python 3.10 or newer)**
 
 ```bash
-git clone https://github.com/Starive/A3-for-ARCH7476.git
+git clone https://github.com/Gabrielle-Guo/A3-for-ARCH7476.git
 cd A3-for-ARCH7476
 pip install -r requirements.txt
 python run_all.py
