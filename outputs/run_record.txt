@@ -1,0 +1,14 @@
+Run: 2026-11-26 09:52 UTC
+Environment: python 3.13.18 | numpy 2.5.3 | matplotlib 3.11.2 | platform Linux x86_64
+A3 scenarios: 36 rows -> outputs/a3_scenarios.csv
+A4 window-size scenarios: 504 rows -> outputs/a4_window_size.csv
+Checks: 39 of 39 PASS (25 A3 hand-calculated + 1 grid cross-check + 13 A4 window-size)
+Grid cross-check: PASS - all 36 scenarios re-measured on a 1 cm grid; S2 / east / w=1.50 m overlap = 0.30 m2; max difference: overlap 0.0e+00 m2, share 0.0e+00 %
+Variants passing all 36 A3 conditions: none
+A3 sweep (parallel seat, east proxy) passes all three widths at centres: 2.00-2.15 m
+5 x 5 m window, proportional geometry, east widths passed of 3: S1 2, S2 1, S3 1, S4 1, S5 0, S6 0
+Offset rule (parallel to east edge, centre 2.00-2.15 m): passes 3 of 3 widths at window sizes 4, 4.5, 5, 5.5, 6, 6.5, 7 m
+Reproduction: REPRODUCED - a3_scenarios.csv: all 36 rows match within 0.01; a4_window_size.csv: all 504 rows match within 0.01
+Key figure: outputs/fig_window_size.png (Object Card).
+These are geometric screening results under assumed inputs, not evidence of pedestrian flow or comfort.
+RESULT: ALL CHECKS PASS · REPRODUCED

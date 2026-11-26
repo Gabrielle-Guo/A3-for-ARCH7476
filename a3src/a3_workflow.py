@@ -5,8 +5,9 @@ y = distance south from the north edge proxy (0..window). No map coordinates are
 One 2 x 1 m seat is tested at six alternative placements. Each seat keeps the same position
 in space under both edge proxies; only the edge used as the movement proxy changes.
 
-The core uses exact interval arithmetic and needs only the Python standard library.
-`geopandas_cross_check` repeats the overlap test with geopandas.overlay as an independent check.
+The core uses exact interval arithmetic (Python standard library). `grid_cross_check` re-measures
+all 36 scenarios by counting 1 cm grid cells with numpy, as an independent check. No GIS library is
+needed, so the same checks run on a local machine and in Colab.
 """
 import csv
 import json
@@ -167,34 +168,37 @@ def internal_checks(cfg, variants, rows):
     return checks
 
 
-def geopandas_cross_check(cfg, variants, rows):
-    """Independent overlap test with geopandas.overlay for every east-proxy scenario."""
-    try:
-        import geopandas as gpd
-        from shapely.geometry import box
-    except ImportError:
-        return {"status": "SKIPPED", "detail": "geopandas not installed in this environment"}
-    try:
-        W = cfg["window_m"]
-        seats = gpd.GeoDataFrame({"variant": [v["variant"] for v in variants]},
-                                 geometry=[box(r[0], r[2], r[1], r[3]) for r in (seat_rect(v, cfg) for v in variants)])
-        worst, s2_case = 0.0, None
-        for w in cfg["widths_m"]:
-            corridor = gpd.GeoDataFrame({"corridor": [1]}, geometry=[box(0.0, 0.0, w, W)])
-            inter = gpd.overlay(seats, corridor, how="intersection")
-            areas = dict(zip(inter["variant"], inter.geometry.area)) if len(inter) else {}
-            for v in variants:
-                gp = float(areas.get(v["variant"], 0.0))
-                core = next(r["corridor_overlap_m2"] for r in rows
-                            if r["variant"] == v["variant"] and r["edge_proxy"] == "east" and abs(r["w_m"] - w) < EPS)
-                worst = max(worst, abs(gp - core))
-                if v["variant"] == "S2" and abs(w - 1.5) < EPS:
-                    s2_case = gp
-        ok = worst < 1e-6 and s2_case is not None and abs(s2_case - 0.30) < 1e-6
-        return {"status": "PASS" if ok else "FAIL",
-                "detail": f"S2 / east / w=1.50 m overlap = {s2_case:.2f} m2; max difference from core over 18 east scenarios = {worst:.2e}"}
-    except Exception as exc:  # report, do not hide
-        return {"status": "ERROR", "detail": f"{type(exc).__name__}: {exc}"}
+def grid_cross_check(cfg, variants, rows, cell=0.01):
+    """Independent area check that needs no GIS library.
+
+    Re-measures every one of the 36 scenarios by counting 1 cm grid cells (numpy), instead of the
+    interval arithmetic used by evaluate(). All A3 boundaries lie on multiples of 0.05 m, so the
+    count should match exactly. Runs identically on a local machine and in Colab.
+    """
+    import numpy as np
+    W = cfg["window_m"]
+    n = int(round(W / cell))
+    centres = (np.arange(n) + 0.5) * cell
+    X, Y = np.meshgrid(centres, centres)          # X = distance from east edge, Y = from north edge
+    cell_area = cell * cell
+    worst_ov, worst_sh, s2 = 0.0, 0.0, None
+    for r in rows:
+        v = next(v for v in variants if v["variant"] == r["variant"])
+        x0, x1, y0, y1 = seat_rect(v, cfg)
+        seat = (X > x0) & (X < x1) & (Y > y0) & (Y < y1)
+        d = X if r["edge_proxy"] == "east" else Y
+        w = r["w_m"]
+        ov = float((seat & (d < w)).sum() * cell_area)
+        band = (seat & (d > min(w + cfg["c1_m"], W)) & (d < min(w + cfg["c2_m"], W))).sum()
+        sh = float(100.0 * band / seat.sum())
+        worst_ov = max(worst_ov, abs(ov - r["corridor_overlap_m2"]))
+        worst_sh = max(worst_sh, abs(sh - r["band_share_pct"]))
+        if r["variant"] == "S2" and r["edge_proxy"] == "east" and abs(w - 1.5) < EPS:
+            s2 = ov
+    ok = worst_ov < 1e-6 and worst_sh < 1e-6 and s2 is not None and abs(s2 - 0.30) < 1e-6
+    return {"status": "PASS" if ok else "FAIL",
+            "detail": f"all 36 scenarios re-measured on a 1 cm grid; S2 / east / w=1.50 m overlap = {s2:.2f} m2; "
+                      f"max difference: overlap {worst_ov:.1e} m2, share {worst_sh:.1e} %"}
 
 
 def write_csv(path, rows):

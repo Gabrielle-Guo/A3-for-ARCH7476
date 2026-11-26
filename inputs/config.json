@@ -5,12 +5,38 @@
   "seat_long_m": 2.0,
   "seat_short_m": 1.0,
   "seat_centre_from_north_m": 3.0,
-  "widths_m": [0.75, 1.0, 1.5],
+  "widths_m": [
+    0.75,
+    1.0,
+    1.5
+  ],
   "base_width_m": 1.0,
-  "c1_m": 0.30,
-  "c2_m": 1.50,
+  "c1_m": 0.3,
+  "c2_m": 1.5,
   "s_pct": 60.0,
-  "edge_proxies": ["east", "north"],
+  "edge_proxies": [
+    "east",
+    "north"
+  ],
   "sweep_step_m": 0.05,
-  "status": "Window C, edge proxies, w, c1, c2 and s are researcher assumptions; none is a measured path or a comfort standard"
+  "status": "Window C, edge proxies, w, c1, c2 and s are researcher assumptions; none is a measured path or a comfort standard. A4 adds the window-size test (instructor feedback): 4.0-7.0 m square windows, geometry kept either proportionally or as fixed offsets.",
+  "window_sizes_m": [
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0
+  ],
+  "window_rules": [
+    "proportional",
+    "fixed_offset"
+  ],
+  "offset_rule_centres_m": [
+    2.0,
+    2.05,
+    2.1,
+    2.15
+  ]
 }
